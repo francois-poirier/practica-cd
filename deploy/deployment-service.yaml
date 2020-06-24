@@ -35,4 +35,4 @@ spec:
     - port: 80
   selector:
     app: practicacd
-  type: LoadBalancer
+  type: NodePort
