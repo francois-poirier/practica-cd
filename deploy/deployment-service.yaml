@@ -10,6 +10,9 @@ spec:
   revisionHistoryLimit: 2
   strategy:
     canary:
+      analysis:
+        templates:
+        - templateName: webcheck
       steps:
       - setWeight: 20
       - pause:
@@ -29,6 +32,23 @@ spec:
       - name: practicacd
         image: fpoirier2020/practicacd:2.0
         imagePullPolicy: Always
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  name: webcheck
+spec:
+  args:
+  - name: host
+  metrics:
+  - name: webcheck
+    failureLimit: 1
+    interval: 5
+    successCondition: result == "OK"
+    provider:
+      web:
+        url: "http://172.17.0.2:30439/me/version"
+        jsonPath: "{$.status}"
 ---
 apiVersion: v1
 kind: Service
