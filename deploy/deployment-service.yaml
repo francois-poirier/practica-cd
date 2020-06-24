@@ -39,15 +39,15 @@ metadata:
   name: webcheck
 spec:
   args:
-  - name: host
+  - name: 172.17.0.2:30439
   metrics:
   - name: webcheck
     failureLimit: 1
-    interval: 5
+    interval: 5m
     successCondition: result == "OK"
     provider:
       web:
-        url: "http://172.17.0.2:30439/me/version"
+        url: "http://{{args.host}}/me/version"
         jsonPath: "{$.status}"
 ---
 apiVersion: v1
