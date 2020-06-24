@@ -35,19 +35,4 @@ spec:
     - port: 80
   selector:
     app: practicacd
-  type: ClusterIP
----
-apiVersion: networking.k8s.io/v1beta1
-kind: Ingress
-metadata:
-  name: practicacd
-  annotations:
-    kubernetes.io/ingress.class: traefik
-spec:
-  rules:
-  - host: practicacd.io
-    http:
-      paths:
-      - backend:
-          serviceName: practicacd
-          servicePort: 80
+  type: LoadBalancer
