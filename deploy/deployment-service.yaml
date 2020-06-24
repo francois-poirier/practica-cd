@@ -8,6 +8,15 @@ metadata:
 spec:
   replicas: 3
   revisionHistoryLimit: 2
+  strategy:
+    canary:
+      steps:
+      - setWeight: 20
+      - pause:
+          duration: "30s"
+      - setWeight: 50
+      - pause:
+          duration: "30s"  
   selector:
     matchLabels:
       app: practicacd
