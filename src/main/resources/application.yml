@@ -1,0 +1,6 @@
+server:
+   port: 8081
+    
+practicacd:
+      version: 1.0
+      status: OK
