@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: practicacd
-        image: fpoirier2020/practicacd:1.0
+        image: fpoirier2020/practicacd:2.0
         imagePullPolicy: Always
 ---
 apiVersion: v1
