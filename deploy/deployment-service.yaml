@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: practicacd
-        image: mastercloudapps/practicacd:1.0
+        image: fpoirier2020/practicacd:1.0
         imagePullPolicy: Always
         ports:
         - name: web
