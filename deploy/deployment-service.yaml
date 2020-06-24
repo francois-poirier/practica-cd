@@ -19,7 +19,8 @@ spec:
           duration: "30s"
       - setWeight: 50
       - pause:
-          duration: "30s"  
+          duration: "30s"
+      - setWeight: 100      
   selector:
     matchLabels:
       app: practicacd
