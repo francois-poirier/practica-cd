@@ -13,6 +13,9 @@ spec:
       analysis:
         templates:
         - templateName: webcheck
+      args:
+      - name host
+        value: 172.17.0.2:30439
       steps:
       - setWeight: 20
       - pause:
@@ -39,7 +42,7 @@ metadata:
   name: webcheck
 spec:
   args:
-  - name: 172.17.0.2:30439
+  - name: host
   metrics:
   - name: webcheck
     failureLimit: 1
